@@ -43,6 +43,31 @@ func location(city string) (string, string) {
 	return region, continent
 }
 
+func fizzBuzz(inputNumber int) {
+	/*
+		Print Fizz if the number is divisible by 3.
+		Print Buzz if the number is divisible by 5.
+		Print FizzBuzz if the number is divisible by both 3 and 5.
+		Print the number if none of the previous cases match.
+		Try to use the switch statement.
+	*/
+
+	div3 := inputNumber % 3
+	div5 := inputNumber % 5
+	divResult := div3 + div5
+
+	switch divResult {
+	case 0:
+		fmt.Println("Divisible by 3 and 5")
+	default:
+
+		fmt.Println("Not divisible by 3")
+	}
+
+	fmt.Println(div3, div5)
+
+}
+
 // Main function
 func main() {
 	initializeSeed()
@@ -77,4 +102,7 @@ func main() {
 	cityName := "Lisboa"
 	region, continent := location(cityName)
 	fmt.Printf("My city is %s, which is located in %s, %s\n", cityName, region, continent)
+
+	// Call fizzBuzz function
+	fizzBuzz(12)
 }
