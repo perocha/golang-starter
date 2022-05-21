@@ -23,7 +23,16 @@ func main() {
 	fmt.Println("Position 99: ", numbers[99])
 	fmt.Println("Len: ", len(numbers))
 
+	// Create a multi dimensional array
 	multiDimensionalArray()
+
+	// Slice
+	monthSlice := []string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
+	fmt.Println("\nTest using Slice")
+	fmt.Println(monthSlice)
+	fmt.Println("Length:", len(monthSlice))
+	fmt.Println("Capacity:", cap(monthSlice))
+
 }
 
 // Create a multi dimensional array
