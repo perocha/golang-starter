@@ -22,6 +22,7 @@ func main() {
 	log.SetPrefix("main(): ")
 	log.Print("Hey, I'm a new log file!")
 
+	// Call 1 of the dummy function, it execute without error
 	inputString := "Name"
 	result, err := testFunction(inputString)
 	if err == nil {
@@ -31,6 +32,7 @@ func main() {
 		fmt.Println("Err call 1: ", err)
 	}
 
+	// Call 2 of the dummy function, will return error (empty string)
 	inputString = ""
 	result, err = testFunction(inputString)
 	if err == nil {
@@ -40,6 +42,7 @@ func main() {
 		fmt.Println("Err call 2: ", err)
 	}
 
+	// Call 3 of the dummy function, will return error (string too big)
 	inputString = "This is just a test"
 	result, err = testFunction(inputString)
 	if err == nil {
@@ -53,6 +56,7 @@ func main() {
 	}
 }
 
+// Dummy function to return different error messages
 func testFunction(input string) (int, error) {
 	stringLenght := len(input)
 
