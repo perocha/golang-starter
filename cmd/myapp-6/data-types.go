@@ -66,4 +66,35 @@ func main() {
 		fmt.Printf("%d\tCapacity = %d\t%v\n", i, cap(numberSlice), numberSlice)
 	}
 
+	// 	lettersSlice = ["A", "B", "C", "D", "E"]
+	//  index =          0    1    2    3    4
+	//  position =       1    2    3    4    5
+	lettersSlice := []string{"A", "B", "C", "D", "E"}
+	fmt.Println("\nCreating copies of a Slice")
+	fmt.Println("Before: ", lettersSlice)
+
+	// slice1 = lettersSlice[index, last position] = ["A", "B"]
+	slice1 := lettersSlice[0:2]
+	// slice2 = lettersSlice[index, last position] = ["B", "C", "D"]
+	slice2 := lettersSlice[1:4]
+
+	// By changing slice2, it also changes the underlying lettersSlice slice, so all 3 slices will have this change
+	slice2[1] = "Z"
+	fmt.Println("After step 1 -->")
+	fmt.Println("lettersSlice: ", lettersSlice)
+	fmt.Println("Slice1: ", slice1)
+	fmt.Println("Slice2: ", slice2)
+
+	// Use the copy function to copy a Slice
+	slice3 := make([]string, 3)
+	copy(slice3, lettersSlice[1:4])
+
+	// Changing again slice2, it will now change lettersSlice and slice2, but not slice3
+	slice2[1] = "ZZ"
+	fmt.Println("After step 2 -->")
+	fmt.Println("lettersSlice: ", lettersSlice)
+	fmt.Println("Slice1: ", slice1)
+	fmt.Println("Slice2: ", slice2)
+	fmt.Println("Slice3: ", slice3)
+
 }
