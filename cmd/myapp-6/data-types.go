@@ -3,6 +3,9 @@ package main
 import "fmt"
 
 func main() {
+	/*
+		ARRAYS
+	*/
 	// Very simple array
 	var a [3]int
 	a[1] = 10
@@ -40,6 +43,9 @@ func main() {
 	}
 	fmt.Println("All at once:", threeD)
 
+	/*
+		SLICES
+	*/
 	// Slice
 	monthSlice := []string{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}
 	fmt.Println("\nTest using Slice")
@@ -97,4 +103,40 @@ func main() {
 	fmt.Println("Slice2: ", slice2)
 	fmt.Println("Slice3: ", slice3)
 
+	/*
+		MAPS
+	*/
+	// Map creation
+	studentsAge := make(map[string]int)
+	fmt.Println(studentsAge)
+	studentsAge["Celia"] = 23
+	studentsAge["Salomeja"] = 21
+
+	// Print content of a map
+	fmt.Println(studentsAge)
+	fmt.Println("Print student age: ", studentsAge["Celia"])
+
+	// Boolean for an element that doesn't exist in the map
+	age, exist := studentsAge["Pedro"]
+	if exist {
+		fmt.Println("Student age is: ", age)
+	} else {
+		fmt.Println("Student not found")
+	}
+
+	// Add new elements to a map
+	studentsAge["Pedro"] = 30
+	studentsAge["Pedro"] = 31 // replace the value of an existing key
+	studentsAge["Laura"] = 29
+	fmt.Println("Add elements: ", studentsAge)
+
+	// Delete elements from a map
+	delete(studentsAge, "Pedro")
+	fmt.Println("Remove elements: ", studentsAge)
+
+	// Loop the map
+	fmt.Println("List of all students with a for loop")
+	for name, age := range studentsAge {
+		fmt.Printf("%s is %v years old\n", name, age)
+	}
 }
