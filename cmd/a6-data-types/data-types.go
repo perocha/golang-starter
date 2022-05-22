@@ -64,6 +64,14 @@ func main() {
 	fmt.Println(quarter3, len(quarter3), cap(quarter3))
 	fmt.Println(quarter4, len(quarter4), cap(quarter4))
 
+	// Append to the original slice, it will double the original capacity
+	monthSlice = append(monthSlice, "New month 13")
+	fmt.Println("Length:", len(monthSlice))
+	fmt.Println("Capacity:", cap(monthSlice))
+	monthSlice = append(monthSlice, "New month 14")
+	fmt.Println("Length:", len(monthSlice))
+	fmt.Println("Capacity:", cap(monthSlice))
+
 	// Append elements to an empty Slice
 	var numberSlice []int
 	fmt.Println("\nAppending elements to a Slice")
