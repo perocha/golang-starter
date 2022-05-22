@@ -17,11 +17,6 @@ type Employee struct {
 	ManagerID int
 }
 
-type Contractor struct {
-	Person
-	CompanyID int
-}
-
 func main() {
 	employeeList := []Employee{
 		Employee{
