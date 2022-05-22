@@ -139,4 +139,39 @@ func main() {
 	for name, age := range studentsAge {
 		fmt.Printf("%s is %v years old\n", name, age)
 	}
+
+	/*
+		STRUCT
+	*/
+	// Basic struct example
+	type Employee struct {
+		ID        int
+		FirstName string
+		LastName  string
+		Address   string
+	}
+
+	fmt.Println("\nStruct examples")
+	employee1 := Employee{LastName: "Doe", FirstName: "John"}
+	employee2 := Employee{ID: 2323, LastName: "Missing", FirstName: "Peter", Address: "NY"}
+	fmt.Println("Employee1: ", employee1)
+	fmt.Println("Employee2: ", employee2)
+
+	// Create a pointer to the first element and change it
+	fmt.Println("\nCreate a copy and change it")
+	employeeCopy := &employee1
+	employeeCopy.FirstName = "David"
+	fmt.Println("Employee1: ", employee1)
+	fmt.Println("Employee2: ", employee2)
+
+	// Struct embedding
+	type Company struct {
+		companyName  string
+		employeeInfo Employee
+	}
+	fmt.Println("Struct embedding example")
+	company1 := Company{companyName: "Microsoft", employeeInfo: employee2}
+	fmt.Println("Company: ", company1)
+	fmt.Println("Employee first name: ", company1.employeeInfo.FirstName)
+
 }
