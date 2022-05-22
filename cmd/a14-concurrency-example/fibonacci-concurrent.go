@@ -34,7 +34,8 @@ func main() {
 
 	// Get all the responses from the Fibonacci functions
 	for i := 0; i < size; i++ {
-		fmt.Println(<-myChannel)
+		fibonacciResult := <-myChannel
+		fmt.Println(fibonacciResult)
 	}
 
 	elapsed := time.Since(start)
